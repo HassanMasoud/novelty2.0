@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Book = require("../models/author");
+const Author = require("../models/author");
+const Book = require("../models/book");
 
 // All Books Route
 router.get("/", async (req, res) => {
@@ -8,8 +9,17 @@ router.get("/", async (req, res) => {
 });
 
 // New Book Route
-router.get("/new", (req, res) => {
-  res.send("new book");
+router.get("/new", async (req, res) => {
+  try {
+    const authors = await Author.find({});
+    const book = new Book();
+    res.render("books/new", {
+      authors: authors,
+      book: book
+    });
+  } catch (err) {
+    res.redirect("/books");
+  }
 });
 
 // Create Book Route
