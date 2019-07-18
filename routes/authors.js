@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
       authors: authors,
       searchOptions: req.query
     });
-  } catch (err) {
+  } catch {
     res.redirect("/");
   }
 });
@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
     const newAuthor = await author.save();
     // res.redirect(`authors/${newAuthor.id}`)
     res.redirect(`authors`);
-  } catch (err) {
+  } catch {
     res.render("authors/new", {
       author: author,
       errorMessage: "Error creating Author"
