@@ -14,6 +14,7 @@ db.once("open", () => console.log("Connected to Mongoose"));
 
 const indexRoute = require("./routes/index");
 const authorRoute = require("./routes/authors");
+const bookRoute = require("./routes/books");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -24,5 +25,6 @@ app.use(express.urlencoded({ limit: "10mb", extended: false }));
 
 app.use("/", indexRoute);
 app.use("/authors", authorRoute);
+app.use("/books", bookRoute);
 
 app.listen(process.env.PORT || 3000, () => "Server started");
