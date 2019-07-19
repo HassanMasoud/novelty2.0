@@ -1,0 +1,38 @@
+:root {
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-background: #52ee93;
+  --color-btn-danger-text: #fff;
+  --color-btn-danger-background: #af0f0f;
+}
+.btn {
+  border: 1px solid var(--color-btn-border);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-family: "Playfair Display";
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary {
+  color: var(--color-btn-primary-text);
+  background-color: var(--color-btn-primary-background);
+}
+
+.btn-danger {
+  color: var(--color-btn-danger-text);
+  background-color: var(--color-btn-danger-background);
+}
+
+.btn-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.btn-row > * {
+  margin-left: 1rem;
+}
+.btn-row > *:first-child {
+  margin-left: 0;
+}
