@@ -38,7 +38,7 @@
   border-radius: 0.25rem;
   font-size: 1rem;
   font-weight: normal;
-  font-family: "Playfair Display";
+  font-family: "Roboto";
   outline: none;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .filepond--root {
-  font-family: "Playfair Display";
+  font-family: "Roboto";
   margin-bottom: 0;
 }
 
