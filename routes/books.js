@@ -86,7 +86,7 @@ router.put("/:id", async (req, res) => {
     book.description = req.body.description;
 
     if (req.body.cover != null && req.body.cover !== "") {
-      saveCover(body, req.body.cover);
+      saveCover(book, req.body.cover);
     }
     await book.save();
     res.redirect(`/books/${book.id}`);
@@ -108,7 +108,7 @@ router.delete("/:id", async (req, res) => {
     res.redirect("/books");
   } catch {
     if (book != null) {
-      res.render("/books/show", {
+      res.render("books/show", {
         book: book,
         errorMessage: "Could not delete the book"
       });

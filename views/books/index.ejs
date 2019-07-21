@@ -3,7 +3,12 @@
   <div class="form-row">
     <div class="form-item">
       <label for="">Title</label>
-      <input type="text" name="title" value="<%= searchOptions.title %>" />
+      <input
+        type="text"
+        name="title"
+        value="<%= searchOptions.title %>"
+        required
+      />
     </div>
   </div>
   <div class="form-row">
@@ -28,10 +33,5 @@
     <button class="btn btn-primary" type="submit">Search</button>
   </div>
 </form>
-<div>
-  <% books.forEach(book => { %>
-  <a href="/books/<%= book.id %>">
-    <img src="<%= book.coverImagePath %>" alt="" height="150" width="100" />
-  </a>
-  <% }) %>
-</div>
+<br />
+<%- include('../partials/bookGrid', {books: books, large: true}) %>

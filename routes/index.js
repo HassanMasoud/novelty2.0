@@ -15,4 +15,8 @@ router.get("/", async (req, res) => {
   res.render("index", { books: books });
 });
 
+router.get("/about", (req, res) => {
+  res.render("about");
+});
+
 module.exports = router;

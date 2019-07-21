@@ -59,8 +59,8 @@
 }
 
 .filepond--panel-root {
-  background-color: #ccc;
-  border: 1px solid black;
+  background-color: rgb(228, 228, 228);
+  border: 1px solid #ccc;
 }
 
 .filepond--drop-label {
